@@ -1,0 +1,21 @@
+
+<title>{{title}}</title>
+<h1>Template Driven Form</h1>
+<form #registerForm="ngForm"  (submit)="register(registerForm)">
+  <label>First Name</label><br>
+  <input type="text" [(ngModel)]="firstname" name="firstname" required><br><br>
+  <label>Last Name</label><br>
+  <input type="text" [(ngModel)]="lastname" name="lastname" required><br><br>
+  <label>Select the event</label><br>
+  <select [(ngModel)]="event" name="event" required>
+    <option value="">Select an option</option>
+    <option value="Dancing">Dancing</option>
+    <option value="Singing">Singing</option>
+    <option value="Story writing">Story writing</option>
+    <option value="Treasure hunt">Treasure hunt</option>
+  </select><br><br>
+  <input type="checkbox" [(ngModel)]="terms" name="terms" required> Agree to conditions<br><br>
+  <button type="submit" (click)="success()" [disabled]="!registerForm.valid">Submit</button><br>
+  <button type="reset" (click)="resetForm(registerForm)">Reset</button>
+  <button type="set" (click)="setForm(registerForm)">Set</button>
+</form>
